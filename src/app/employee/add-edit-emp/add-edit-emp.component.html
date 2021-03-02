@@ -1,0 +1,20 @@
+<div class="form-froup row">
+  <div class="col-sm-10">
+    <label class="col-sm-4 col-form-label">Emri i Punetorit</label>
+    <input type="text" class="form-control" [(ngModel)]="EmployeeName"
+    placeholder="Enter Employee Name">
+    <label class="col-sm-4 col-form-label">Departamenti i Punetorit</label>
+    <input type="text" class="form-control mt-2" [(ngModel)]="Department"
+    placeholder="Enter Employee Department">
+    <label class="col-sm-4 col-form-label">Data e fillimit te punes se Punetorit</label>
+    <input type="date" class="form-control mt-2" [(ngModel)]="DateOfJoining"
+    placeholder="">
+  </div>
+</div>
+<button (click)="addEmployee()" *ngIf="emp.EmployeeID == 0" class="btn btn-primary mt-2">
+  Shto
+</button>
+
+<button (click)="updateEmployee()" *ngIf="emp.EmployeeID != 0" class="btn btn-primary mt-2">
+  Perditeso
+</button>

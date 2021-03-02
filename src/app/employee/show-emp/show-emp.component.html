@@ -1,0 +1,55 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2"
+data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)="addClick()"
+data-bs-backdrop="static" data-bs-keyboard="false"
+>
+ Shto Punetorin
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" >{{ModalTitle}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+          (click)="closeClick()"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- Trupi i modalit -->
+        <app-add-edit-emp [emp]="emp" *ngIf="ActivateAddEditEmpComp"></app-add-edit-emp>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Shfaq te dhenat nga databaza ne table -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID e Punetorit</th>
+      <th>Emri i Punetorit</th>
+      <th>Departamenti</th>
+      <th>Data e hyrjes ne Pune</th>
+      <th>Operacionet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataItem of EmployeeList">
+      <td>{{dataItem.EmployeeID}}</td>
+      <td>{{dataItem.EmployeeName}}</td>
+      <td>{{dataItem.Department}}</td>
+      <td>{{dataItem.DateOfJoining}}</td>
+      <td>
+        <button type="button" class="btn btn-light mr-1">
+          Edit
+        </button>
+        <!-- <button type="button" class="btn btn-light mr-1">
+          Delete
+        </button> -->
+      </td>
+    </tr>
+  </tbody>
+</table>
